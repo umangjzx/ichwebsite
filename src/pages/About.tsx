@@ -85,9 +85,9 @@ const About: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
                 { icon: Clock, value: 25, suffix: '+', label: 'Years in Business' },
-                { icon: Users, value: 5000, suffix: '+', label: 'Happy Customers' },
-                { icon: Factory, value: 1000, suffix: '+', label: 'Product Range' },
-                { icon: Globe, value: 1, suffix: '', label: 'PAN India Reach' },
+                { icon: Users, value: 1000, suffix: '+', label: 'Happy Customers' },
+                { icon: Factory, value: 100, suffix: '+', label: 'Product Range' },
+                { icon: Globe, value: 3, suffix: '', label: 'PAN India Reach' },
               ].map((stat, i) => (
                 <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
                   <stat.icon className="h-8 w-8 text-primary mx-auto mb-3" />

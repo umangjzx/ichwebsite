@@ -85,6 +85,14 @@ const Navbar: React.FC = () => {
               <Phone className="h-4 w-4" />
               {COMPANY.phone}
             </a>
+            <span className="text-gray-600">|</span>
+            <a
+              href={`tel:${COMPANY.altPhone}`}
+              className="flex items-center gap-2 text-sm font-body font-medium text-gray-400 hover:text-white transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              {COMPANY.altPhone}
+            </a>
             <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
               <Button variant="primary" size="sm">WhatsApp Us</Button>
             </a>
@@ -136,6 +144,13 @@ const Navbar: React.FC = () => {
                 >
                   <Phone className="h-4 w-4" />
                   {COMPANY.phone}
+                </a>
+                <a
+                  href={`tel:${COMPANY.altPhone}`}
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-body text-gray-400"
+                >
+                  <Phone className="h-4 w-4" />
+                  {COMPANY.altPhone}
                 </a>
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button variant="primary" size="sm" className="w-full mt-2">
