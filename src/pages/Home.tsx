@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     '@type': 'Organization',
     name: 'Industrial Chain & Hardware',
     url: 'https://industrialchain.com',
-    logo: 'https://industrialchain.com/images/logo/logiTCL.jpeg',
+    logo: 'https://industrialchain.com/images/logo/image.png',
     description: 'Industrial Chain & Hardware (ICH) - 25+ years of manufacturing excellence in industrial chains, sprockets, pulleys, couplings, wire ropes, and lifting equipment. Based in Coimbatore, Tamil Nadu, India.',
     address: {
       '@type': 'PostalAddress',

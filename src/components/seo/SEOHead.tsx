@@ -14,7 +14,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
   keywords = [],
-  ogImage = '/images/logo/logiTCL.jpeg',
+  ogImage = '/images/logo/image.png',
   canonical,
   structuredData,
 }) => {

@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="p-2 rounded-lg ring-1 ring-gray-700/50 bg-gray-900">
-                <img src="/images/logo/image.png" alt="Industrial Chain & Hardware Logo" className="h-12 w-auto object-contain rounded" onError={(e) => { const img = e.currentTarget; if (!img.dataset.fallback) { img.dataset.fallback = '1'; img.src = '/images/logo/logiTCL.jpeg'; } }} />
+                <img src="/images/logo/image.png" alt="Industrial Chain & Hardware Logo" className="h-12 w-auto object-contain rounded" />
               </div>
               <div>
                 <span className="text-sm font-display font-semibold block leading-tight text-white">

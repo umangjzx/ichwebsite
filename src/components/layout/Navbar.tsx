@@ -31,13 +31,6 @@ const Navbar: React.FC = () => {
               src="/images/logo/image.png"
               alt="Industrial Chain & Hardware Logo"
               className="h-12 w-auto object-contain rounded-lg ring-1 ring-gray-700/50"
-              onError={(e) => {
-                const img = e.currentTarget as HTMLImageElement;
-                if (!img.dataset.fallback) {
-                  img.dataset.fallback = '1';
-                  img.src = '/images/logo/logiTCL.jpeg';
-                }
-              }}
             />
             <div className="hidden sm:block">
               <span className="text-sm font-display font-semibold block leading-tight text-white">
