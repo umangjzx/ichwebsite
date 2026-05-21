@@ -38,9 +38,9 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight mb-6"
             >
-              Premium Industrial{' '}
+              Total industrial{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">
-                Power Transmission
+                solutions under one roof
               </span>
             </motion.h1>
 
