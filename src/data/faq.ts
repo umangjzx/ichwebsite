@@ -70,7 +70,7 @@ export const faqs: FAQ[] = [
   {
     id: 'faq12',
     question: 'How do I request a quotation?',
-    answer: 'You can request a quotation through our website contact form, by emailing industrialchain8@gmail.com, or by calling/WhatsApp at +91 87547 35021. For the fastest response, include the product name, size/quantity, and any special requirements in your enquiry.',
+    answer: 'You can request a quotation through our website contact form, by emailing industrialchain8@gmail.com, or by calling/WhatsApp at +91 96778 32013. For the fastest response, include the product name, size/quantity, and any special requirements in your enquiry.',
     category: 'Ordering',
   },
   {
