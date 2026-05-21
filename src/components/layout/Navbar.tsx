@@ -53,12 +53,19 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   to={link.path}
-                  className={`px-3 py-2 text-sm font-body font-medium rounded-lg transition-all duration-200 flex items-center gap-1 ${
+                  className={`relative px-3 py-2 text-sm font-body font-medium rounded-lg transition-all duration-200 flex items-center gap-1 ${
                     location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path))
-                      ? 'text-primary bg-primary/10'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'text-white'
+                      : 'text-gray-300 hover:text-white'
                   }`}
                 >
+                  {(location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path))) && (
+                    <motion.div
+                      layoutId="navbar-active-pill"
+                      className="absolute inset-0 bg-primary/20 rounded-lg -z-10"
+                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    />
+                  )}
                   {link.label}
                   {link.hasDropdown && <ChevronDown className="h-3 w-3" />}
                 </Link>

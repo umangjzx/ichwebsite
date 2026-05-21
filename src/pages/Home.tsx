@@ -6,6 +6,7 @@ import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import CTABanner from '@/components/sections/CTABanner';
 import FeaturedProducts from '@/components/sections/FeaturedProducts';
 import IndustriesPreview from '@/components/sections/IndustriesPreview';
+import BrandMarquee from '@/components/sections/BrandMarquee';
 
 const Home: React.FC = () => {
   const structuredData = {
@@ -39,6 +40,7 @@ const Home: React.FC = () => {
       />
       <main id="main-content" className="skip-to-content-target">
         <HeroSection />
+        <BrandMarquee />
         <FeaturedProducts />
         <WhyChooseUs />
         <ProductGrid />

@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { AnimatePresence } from 'framer-motion';
+import PageTransition from '@/components/layout/PageTransition';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
@@ -39,16 +41,37 @@ const App: React.FC = () => {
           <Navbar />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:slug" element={<ProductDetail />} />
-              <Route path="/industries" element={<Industries />} />
-              <Route path="/quality" element={<Quality />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
+        <Route path="/products/:slug" element={<PageTransition><ProductDetail /></PageTransition>} />
+        <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
+        <Route path="/quality" element={<PageTransition><Quality /></PageTransition>} />
+        <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
+        <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
+        <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollRestoration />
+        <div className="min-h-screen bg-dark flex flex-col">
+          <a href="#main-content" className="skip-to-content">
+            Skip to main content
+          </a>
+          <Navbar />
+          <Suspense fallback={<LoadingFallback />}>
+            <AnimatedRoutes />
           </Suspense>
           <Footer />
           <ScrollToTop />

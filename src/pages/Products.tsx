@@ -5,6 +5,7 @@ import { Search, Filter, ArrowRight } from 'lucide-react';
 import SEOHead from '@/components/seo/SEOHead';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import ProductCard3D from '@/components/3d/ProductCard3D';
+import ProgressiveImage from '@/components/ui/ProgressiveImage';
 import { products, categoryInfo, getProductsByCategory } from '@/data/products';
 import Badge from '@/components/ui/Badge';
 
@@ -94,11 +95,10 @@ const Products: React.FC = () => {
                 >
                   {/* Product Image */}
                   <div className="aspect-[4/3] bg-gray-800 overflow-hidden">
-                    <img
+                    <ProgressiveImage
                       src={product.images[0]}
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
                     />
                   </div>
                   {/* Content */}
