@@ -27,7 +27,18 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img src="/images/logo/image.png" alt="Industrial Chain & Hardware Logo" className="h-12 w-auto object-contain rounded-lg ring-1 ring-gray-700/50" />
+            <img
+              src="/images/logo/image.png"
+              alt="Industrial Chain & Hardware Logo"
+              className="h-12 w-auto object-contain rounded-lg ring-1 ring-gray-700/50"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                if (!img.dataset.fallback) {
+                  img.dataset.fallback = '1';
+                  img.src = '/images/logo/logiTCL.jpeg';
+                }
+              }}
+            />
             <div className="hidden sm:block">
               <span className="text-sm font-display font-semibold block leading-tight text-white">
                 Industrial Chain
