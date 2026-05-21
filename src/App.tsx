@@ -29,18 +29,6 @@ const LoadingFallback: React.FC = () => (
   </div>
 );
 
-const App: React.FC = () => {
-  return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <ScrollRestoration />
-        <div className="min-h-screen bg-dark flex flex-col">
-          <a href="#main-content" className="skip-to-content">
-            Skip to main content
-          </a>
-          <Navbar />
-          <Suspense fallback={<LoadingFallback />}>
-            <Routes>
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (

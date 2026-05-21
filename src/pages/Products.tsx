@@ -10,10 +10,13 @@ import { products, categoryInfo, getProductsByCategory } from '@/data/products';
 import Badge from '@/components/ui/Badge';
 
 const Products: React.FC = () => {
-  const [searchParams] = useSearchParams();
-  const initialCategory = searchParams.get('category') || 'all';
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedCategory = searchParams.get('category') || 'all';
   const [searchQuery, setSearchQuery] = useState('');
+
+  const handleCategoryChange = (slug: string) => {
+    setSearchParams({ category: slug });
+  };
 
   const filteredProducts = useMemo(() => {
     let result = selectedCategory === 'all' ? products : getProductsByCategory(selectedCategory);
@@ -71,7 +74,7 @@ const Products: React.FC = () => {
               {categories.map((cat) => (
                 <button
                   key={cat.slug}
-                  onClick={() => setSelectedCategory(cat.slug)}
+                  onClick={() => handleCategoryChange(cat.slug)}
                   className={`px-4 py-2 rounded-lg font-body font-medium text-sm transition-all ${
                     selectedCategory === cat.slug
                       ? 'bg-primary text-white shadow-lg shadow-black/20'
