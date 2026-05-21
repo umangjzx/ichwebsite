@@ -4,11 +4,13 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
+import ScrollRestoration from '@/components/layout/ScrollRestoration';
+
+import Home from '@/pages/Home';
+import Products from '@/pages/Products';
 
 // Lazy-loaded pages for performance
-const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
-const Products = lazy(() => import('@/pages/Products'));
 const ProductDetail = lazy(() => import('@/pages/ProductDetail'));
 const Industries = lazy(() => import('@/pages/Industries'));
 const Quality = lazy(() => import('@/pages/Quality'));
@@ -29,6 +31,7 @@ const App: React.FC = () => {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollRestoration />
         <div className="min-h-screen bg-dark flex flex-col">
           <a href="#main-content" className="skip-to-content">
             Skip to main content
