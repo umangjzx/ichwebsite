@@ -11,10 +11,10 @@ const Home: React.FC = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Industrial Chain & Hardware',
+    name: 'Industrial Chain & Hardwares',
     url: 'https://industrialchain.com',
     logo: 'https://industrialchain.com/images/logo/image.png',
-    description: 'Industrial Chain & Hardware (ICH) - 25+ years of manufacturing excellence in industrial chains, sprockets, pulleys, couplings, wire ropes, and lifting equipment. Based in Coimbatore, Tamil Nadu, India.',
+    description: 'Industrial Chain & Hardwares (ICH) - 25+ years of manufacturing excellence in industrial chains, sprockets, pulleys, couplings, wire ropes, and lifting equipment. Based in Coimbatore, Tamil Nadu, India.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '8-B, R.R. Swamy Lane, Ramnagar Post',
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Industrial Chain & Hardware - Total Industrial Solution Under One Roof"
+        title="Industrial Chain & Hardwares - Total Industrial Solution Under One Roof"
         description="ICH Coimbatore: 25+ years of manufacturing excellence. Roller chains, sprockets, pulleys, couplings, wire ropes, lifting equipment. ISO compliant. PAN India delivery."
         keywords={['industrial chain', 'sprocket', 'pulley', 'coupling', 'wire rope', 'lifting equipment', 'Coimbatore', 'India', 'manufacturer', 'supplier']}
         canonical="/"

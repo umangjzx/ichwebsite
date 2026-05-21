@@ -21,13 +21,13 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="p-2 rounded-lg ring-1 ring-gray-700/50 bg-gray-900">
-                <img src="/images/logo/image.png" alt="Industrial Chain & Hardware Logo" className="h-12 w-auto object-contain rounded" />
+                <img src="/images/logo/image.png" alt="Industrial Chain & Hardwares Logo" className="h-12 w-auto object-contain rounded" />
               </div>
               <div>
                 <span className="text-sm font-display font-semibold block leading-tight text-white">
                   Industrial Chain
                 </span>
-                <span className="text-xs font-body text-gray-400">& Hardware</span>
+                <span className="text-xs font-body text-gray-400">& Hardwares</span>
               </div>
             </div>
             <p className="text-sm font-body text-gray-400 mb-4 leading-relaxed">

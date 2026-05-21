@@ -15,10 +15,10 @@ const AboutPreview: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-              About Industrial Chain & Hardware
+              About Industrial Chain & Hardwares
             </h2>
             <p className="font-body text-muted leading-relaxed mb-4">
-              Founded in {COMPANY.foundedYear}, Industrial Chain & Hardware has grown from a small industrial supply shop in Coimbatore to one of the most trusted names in power transmission and lifting solutions across India.
+              Founded in {COMPANY.foundedYear}, Industrial Chain & Hardwares has grown from a small industrial supply shop in Coimbatore to one of the most trusted names in power transmission and lifting solutions across India.
             </p>
             <p className="font-body text-muted leading-relaxed mb-4">
               As a manufacturer, supplier, and exporter with {COMPANY.yearsInBusiness}+ years of experience, we offer a comprehensive range of roller chains, sprockets, pulleys, couplings, wire ropes, and lifting equipment. Our commitment to quality, custom manufacturing capability, and PAN India delivery network sets us apart.

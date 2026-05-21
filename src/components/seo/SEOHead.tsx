@@ -19,7 +19,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   structuredData,
 }) => {
   const siteUrl = 'https://industrialchain.com';
-  const fullTitle = `${title} | Industrial Chain & Hardware (ICH)`;
+  const fullTitle = `${title} | Industrial Chain & Hardwares (ICH)`;
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
 
   return (

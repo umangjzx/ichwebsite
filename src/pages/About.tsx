@@ -23,7 +23,7 @@ const About: React.FC = () => {
     <>
       <SEOHead
         title="About Us"
-        description="Industrial Chain & Hardware (ICH) - 25+ years of manufacturing excellence in Coimbatore. Learn about our mission, history, and commitment to quality industrial products."
+        description="Industrial Chain & Hardwares (ICH) - 25+ years of manufacturing excellence in Coimbatore. Learn about our mission, history, and commitment to quality industrial products."
         keywords={['about ICH', 'industrial chain manufacturer', 'Coimbatore', 'company history', 'mission']}
         canonical="/about"
       />

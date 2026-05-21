@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center space-x-3 group">
             <img
               src="/images/logo/image.png"
-              alt="Industrial Chain & Hardware Logo"
+              alt="Industrial Chain & Hardwares Logo"
               className="h-12 w-auto object-contain rounded-lg ring-1 ring-gray-700/50"
             />
             <div className="hidden sm:block">
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
                 Industrial Chain
               </span>
               <span className="text-xs font-body text-gray-400">
-                & Hardware
+                & Hardwares
               </span>
             </div>
           </Link>

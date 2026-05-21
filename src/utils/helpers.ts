@@ -28,7 +28,7 @@ export function truncate(text: string, maxLength: number): string {
 }
 
 export const COMPANY = {
-  name: 'Industrial Chain & Hardware',
+  name: 'Industrial Chain & Hardwares',
   acronym: 'ICH',
   tagline: 'Total industrial solutions under one roof',
   address: '8-B, R.R. Swamy Lane, Ramnagar Post, Coimbatore – 641009, Tamil Nadu, India',
