@@ -33,6 +33,7 @@ export const COMPANY = {
   tagline: 'Total industrial solutions under one roof',
   address: '8-B, R.R. Swamy Lane, Ramnagar Post, Coimbatore – 641009, Tamil Nadu, India',
   phone: '+91 96778 32013',
+  altPhone: '+91 87547 35021',
   email: 'industrialchain8@gmail.com',
   whatsapp: '+91 96778 32013',
   whatsappMessage: 'Hello, I would like to get a quotation for your industrial products.',

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface UseAnimatedCounterOptions {
   end: number;
@@ -14,43 +14,48 @@ export const useAnimatedCounter = ({
   easing = (t) => t * (2 - t), // easeOutQuad
 }: UseAnimatedCounterOptions) => {
   const [count, setCount] = useState(start);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const isAnimatingRef = useRef(false);
+  const hasAnimatedRef = useRef(false);
   const frameRef = useRef<number>(0);
   const startTimeRef = useRef<number>(0);
 
-  const animate = (timestamp: number) => {
-    if (!startTimeRef.current) startTimeRef.current = timestamp;
-    const progress = Math.min((timestamp - startTimeRef.current) / duration, 1);
-    const easedProgress = easing(progress);
-    const currentCount = Math.floor(start + (end - start) * easedProgress);
-
-    setCount(currentCount);
-
-    if (progress < 1) {
-      frameRef.current = requestAnimationFrame(animate);
-    } else {
-      setCount(end);
-      setIsAnimating(false);
-    }
-  };
-
-  const startAnimation = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
+  const startAnimation = useCallback(() => {
+    // Prevent re-triggering if already animated or currently animating
+    if (isAnimatingRef.current || hasAnimatedRef.current) return;
+    isAnimatingRef.current = true;
     startTimeRef.current = 0;
-    frameRef.current = requestAnimationFrame(animate);
-  };
 
-  const reset = () => {
+    const animate = (timestamp: number) => {
+      if (!startTimeRef.current) startTimeRef.current = timestamp;
+      const progress = Math.min((timestamp - startTimeRef.current) / duration, 1);
+      const easedProgress = easing(progress);
+      const currentCount = Math.floor(start + (end - start) * easedProgress);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        frameRef.current = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+        isAnimatingRef.current = false;
+        hasAnimatedRef.current = true;
+      }
+    };
+
+    frameRef.current = requestAnimationFrame(animate);
+  }, [end, duration, start, easing]);
+
+  const reset = useCallback(() => {
     cancelAnimationFrame(frameRef.current);
     setCount(start);
-    setIsAnimating(false);
+    isAnimatingRef.current = false;
+    hasAnimatedRef.current = false;
     startTimeRef.current = 0;
-  };
+  }, [start]);
 
   useEffect(() => {
     return () => cancelAnimationFrame(frameRef.current);
   }, []);
 
-  return { count, isAnimating, startAnimation, reset };
+  return { count, startAnimation, reset };
 };

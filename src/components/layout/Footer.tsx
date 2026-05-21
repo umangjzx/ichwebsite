@@ -94,11 +94,16 @@ const Footer: React.FC = () => {
                 <MapPin className="h-4 w-4 text-primary mt-1 shrink-0" />
                 <span className="text-sm font-body text-gray-400">{COMPANY.address}</span>
               </li>
-              <li>
-                <a href={`tel:${COMPANY.phone}`} className="flex items-center gap-2 text-sm font-body text-gray-400 hover:text-primary transition-colors">
-                  <Phone className="h-4 w-4 text-primary" />
-                  {COMPANY.phone}
-                </a>
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1 text-sm font-body text-gray-400">
+                  <a href={`tel:${COMPANY.phone}`} className="hover:text-primary transition-colors">
+                    {COMPANY.phone}
+                  </a>
+                  <a href={`tel:${COMPANY.altPhone}`} className="hover:text-primary transition-colors">
+                    {COMPANY.altPhone}
+                  </a>
+                </div>
               </li>
               <li>
                 <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 text-sm font-body text-gray-400 hover:text-primary transition-colors">
